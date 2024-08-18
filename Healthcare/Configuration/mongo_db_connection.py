@@ -1,6 +1,6 @@
 import pymongo
 from Healthcare.Constant.database import DATABASE_NAME
-from HealthCare.Constant.env_variable import MONGODB_URL_KEY
+from Healthcare.Constant.env_variable import MONGODB_URL_KEY
 import certifi
 import os
 ca = certifi.where()
