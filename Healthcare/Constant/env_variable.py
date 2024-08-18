@@ -1,1 +1,1 @@
-MONGODB_URL_KEY = 'mongodb+srv://zama_sarib:Rourkela@1999@cluster0.z9vcaot.mongodb.net/'
+MONGODB_URL_KEY = "MONGODB_URL_KEY"
