@@ -91,7 +91,8 @@ def main():
         # set_env_variable(env_file_path)
         training_pipeline = TrainPipeline()
         data_ingestion_artifact = training_pipeline.run_pipeline()
-        print(data_ingestion_artifact.__dict__())
+        print(data_ingestion_artifact.__dict__)
+        
     except Exception as e:
         print(e)
         logging.exception(e)
