@@ -12,7 +12,7 @@ def get_requirements()->List[str]:
     return requirement_list
 
 setup(
-    name="sensor",
+    name="Healthcare",
     version="0.0.1",
     author="Sarib",
     author_email="zama.sarib@gmail.com",
