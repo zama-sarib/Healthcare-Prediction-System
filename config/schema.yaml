@@ -1,0 +1,34 @@
+Numerical Column:
+- Age: int
+- Room_Number: int
+cat_col:
+- Name: category
+- Gender: category
+- Blood_Type: category
+- Medical_Condition: category
+- Date_of_Admission: category
+- Doctor: category
+- Hospital: category
+- Insurance_Provider: category
+- Admission_Type: category
+- Discharge_Date: category
+- Medication: category
+- Test_Results: category
+columns:
+- Name: category
+- Age: int
+- Gender: category
+- Blood_Type: category
+- Medical_Condition: category
+- Date_of_Admission: category
+- Doctor: category
+- Hospital: category
+- Insurance_Provider: category
+- Billing_Amount: double
+- Room_Number: int
+- Admission_Type: category
+- Discharge_Date: category
+- Medication: category
+- Test_Results: category
+drop_col:
+- name
