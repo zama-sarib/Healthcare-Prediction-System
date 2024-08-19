@@ -30,5 +30,5 @@ columns:
 - Discharge_Date: category
 - Medication: category
 - Test_Results: category
-drop_col:
-- name
+drop_columns:
+- Name
