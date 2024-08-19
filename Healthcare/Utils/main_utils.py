@@ -5,6 +5,8 @@ from Healthcare.logger import logging
 import os,sys
 import numpy as np
 import dill
+import pandas as pd
+from typing import List
 
 def read_yaml_file(file_path: str) -> dict:
     try:
@@ -74,3 +76,46 @@ def load_object(file_path: str, ) -> object:
             return dill.load(file_obj)
     except Exception as e:
         raise HealthCareException(e, sys) from e
+    
+
+def create_schema(dataframe:pd.DataFrame, drop_cols:List=[])->dict:
+
+    """
+    This function creates schema file of the input dataframe.
+    Args: Input Dataframe
+    Return: Dictionary
+    """
+    try:
+
+        data_dict = {}
+        col_list = []
+        for col in dataframe.columns:
+            if 'object' in str(dataframe[col].dtypes):col_list.append({col:'category'})
+            elif 'int' in str(dataframe[col].dtypes):col_list.append({col:'int'})   
+            else:col_list.append({col:'double'})
+                
+
+        numerical_col = [ col for col in dataframe.columns if 'int' in str(dataframe[col].dtype)]
+        cat_col = [col for col in dataframe.columns if 'object' in str(dataframe[col].dtype)]
+
+
+        data_dict.update({'columns':col_list})
+        numerical_col_temp = []
+        
+        for col in numerical_col:
+            numerical_col_temp.append({col:'int'})
+
+        data_dict.update({'Numerical Column':numerical_col_temp})
+        cat_col_temp = []
+
+        for col in cat_col:
+            cat_col_temp.append({col:'category'})
+
+        data_dict.update({'cat_col':cat_col_temp})
+        data_dict.update({'drop_col':drop_cols})
+
+        return data_dict
+    except Exception as e:
+        raise HealthCareException(e,sys)
+
+ 
