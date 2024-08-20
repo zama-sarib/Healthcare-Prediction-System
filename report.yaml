@@ -1,0 +1,42 @@
+Admission Type:
+  drift_status: false
+  p_value: 0.8667281183188517
+Age:
+  drift_status: false
+  p_value: 0.21611743367603775
+Billing Amount:
+  drift_status: false
+  p_value: 0.0898653709170284
+Blood Type:
+  drift_status: false
+  p_value: 0.6684859933675644
+Date of Admission:
+  drift_status: false
+  p_value: 0.22993250988938074
+Discharge Date:
+  drift_status: false
+  p_value: 0.24020094051601615
+Doctor:
+  drift_status: false
+  p_value: 0.06710745296699805
+Gender:
+  drift_status: false
+  p_value: 0.3481794186691435
+Hospital:
+  drift_status: false
+  p_value: 0.5205266215228193
+Insurance Provider:
+  drift_status: false
+  p_value: 0.8611011923967622
+Medical Condition:
+  drift_status: false
+  p_value: 0.9991332342314708
+Medication:
+  drift_status: false
+  p_value: 0.9448595857955807
+Room Number:
+  drift_status: false
+  p_value: 0.5137540072851776
+Test Results:
+  drift_status: false
+  p_value: 0.9999712170358971
