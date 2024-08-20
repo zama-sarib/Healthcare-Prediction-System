@@ -9,7 +9,7 @@ from Healthcare.Components.data_ingestion import DataIngestion
 
 
 from Healthcare.Components.data_validation import DataValidation
-# from Healthcare.Components.data_transformation import DataTransformation
+from Healthcare.Components.data_transformation import DataTransformation
 # from Healthcare.Components.model_trainer import ModelTrainer
 # from Healthcare.Components.model_evaluation import ModelEvaluation
 # from Healthcare.Components.model_pusher import ModelPusher
@@ -111,7 +111,7 @@ class TrainPipeline:
 
             data_ingestion_artifact:DataIngestionArtifact = self.start_data_ingestion()
             data_validation_artifact=self.start_data_validaton(data_ingestion_artifact=data_ingestion_artifact)
-            # data_transformation_artifact = self.start_data_transformation(data_validation_artifact=data_validation_artifact)
+            data_transformation_artifact = self.start_data_transformation(data_validation_artifact=data_validation_artifact)
             # model_trainer_artifact = self.start_model_trainer(data_transformation_artifact)
             # model_eval_artifact = self.start_model_evaluation(data_validation_artifact, model_trainer_artifact)
             # if not model_eval_artifact.is_model_accepted:
