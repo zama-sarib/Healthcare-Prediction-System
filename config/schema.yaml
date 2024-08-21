@@ -1,35 +1,35 @@
-numerical_columns:
+numerical columns:
 - Age
 - Room Number
 
-cat_col:
+cat col:
 - Gender: category
-- Blood_Type: category
-- Medical_Condition: category
-- Date_of_Admission: category
+- Blood Type: category
+- Medical Condition: category
+- Date of Admission: category
 - Doctor: category
 - Hospital: category
-- Insurance_Provider: category
-- Admission_Type: category
-- Discharge_Date: category
+- Insurance Provider: category
+- Admission Type: category
+- Discharge Date: category
 - Medication: category
-- Test_Results: category
+- Test Results: category
 
 columns:
 - Age: int
 - Gender: category
-- Blood_Type: category
-- Medical_Condition: category
-- Date_of_Admission: category
+- Blood Type: category
+- Medical Condition: category
+- Date of Admission: category
 - Doctor: category
 - Hospital: category
-- Insurance_Provider: category
-- Billing_Amount: double
-- Room_Number: int
-- Admission_Type: category
-- Discharge_Date: category
+- Insurance Provider: category
+- Billing Amount: double
+- Room Number: int
+- Admission Type: category
+- Discharge Date: category
 - Medication: category
-- Test_Results: category
+- Test Results: category
 
-drop_columns:
+drop columns:
 - Name

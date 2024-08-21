@@ -1,0 +1,12 @@
+{
+    "folders": [
+     {
+      "path": "."
+     }
+    ],
+    "settings": {
+     "python.terminal.activateEnvInCurrentTerminal": true,
+     "python.defaultInterpreterPath": "/c/Users/zamas/AppData/Local/Programs/Python/Python39/python"
+    }
+   }
+   
