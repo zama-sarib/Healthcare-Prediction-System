@@ -119,18 +119,9 @@ class DataTransformation:
             transformed_input_train_feature = preprocessor_object.transform(input_feature_train_df)
             transformed_input_test_feature =preprocessor_object.transform(input_feature_test_df)
 
-            # smt = SMOTETomek(sampling_strategy="minority")
 
-            # input_feature_train_final, target_feature_train_final = smt.fit_resample(
-            #     transformed_input_train_feature, target_feature_train_df
-            # )
-
-            # input_feature_test_final, target_feature_test_final = smt.fit_resample(
-            #     transformed_input_test_feature, target_feature_test_df
-            # )
-
-            train_arr = transformed_input_train_feature
-            test_arr = transformed_input_test_feature
+            train_arr = np.c_[transformed_input_train_feature, np.array(target_feature_train_df) ]
+            test_arr = np.c_[transformed_input_test_feature, np.array(target_feature_test_df) ]
 
             #save numpy array data
             save_numpy_array_data( self.data_transformation_config.transformed_train_file_path, array=train_arr, )
