@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings('ignore')
 from Healthcare.Entity.config_entity import TrainingPipelineConfig,DataIngestionConfig,DataValidationConfig,DataTransformationConfig
 from Healthcare.Entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact,DataTransformationArtifact
 from Healthcare.Entity.artifact_entity import ModelEvaluationArtifact,ModelPusherArtifact,ModelTrainerArtifact
@@ -10,7 +12,7 @@ from Healthcare.Components.data_ingestion import DataIngestion
 
 from Healthcare.Components.data_validation import DataValidation
 from Healthcare.Components.data_transformation import DataTransformation
-# from Healthcare.Components.model_trainer import ModelTrainer
+from Healthcare.Components.model_trainer import ModelTrainer
 # from Healthcare.Components.model_evaluation import ModelEvaluation
 # from Healthcare.Components.model_pusher import ModelPusher
 
@@ -18,8 +20,7 @@ from Healthcare.Components.data_transformation import DataTransformation
 
 # from sensor.cloud_storage.s3_syncer import S3Sync
 # from sensor.constant.s3_bucket import TRAINING_BUCKET_NAME
-import warnings
-warnings.filterwarnings('ignore')
+
 from Healthcare.Constant.training_pipeline import SAVED_MODEL_DIR
 
 class TrainPipeline:
