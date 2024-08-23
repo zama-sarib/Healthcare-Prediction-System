@@ -39,7 +39,7 @@ class DataValidation:
 
     def is_numerical_column_exist(self,dataframe:pd.DataFrame)->bool:
         try:
-            numerical_columns = self._schema_config["numerical_columns"]
+            numerical_columns = self._schema_config["numerical columns"]
             dataframe_columns = dataframe.columns
 
             numerical_column_present = True

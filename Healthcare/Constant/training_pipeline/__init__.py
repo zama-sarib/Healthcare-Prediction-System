@@ -3,7 +3,7 @@ import os
 
 SAVED_MODEL_DIR =os.path.join("saved_models")
 # defining common constant variable for training pipeline
-TARGET_COLUMN = "class"
+TARGET_COLUMN = "Test Results"
 PIPELINE_NAME: str = "healthcare"
 ARTIFACT_DIR: str = "artifact"
 FILE_NAME: str = "healthcare_dataset.csv"
@@ -14,7 +14,7 @@ TEST_FILE_NAME: str = "test.csv"
 PREPROCSSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 MODEL_FILE_NAME = "model.pkl"
 SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
-SCHEMA_DROP_COLS = "drop_columns"
+SCHEMA_DROP_COLS = "drop columns"
 
 
 """

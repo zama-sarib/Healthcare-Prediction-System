@@ -18,6 +18,8 @@ from Healthcare.Components.data_transformation import DataTransformation
 
 # from sensor.cloud_storage.s3_syncer import S3Sync
 # from sensor.constant.s3_bucket import TRAINING_BUCKET_NAME
+import warnings
+warnings.filterwarnings('ignore')
 from Healthcare.Constant.training_pipeline import SAVED_MODEL_DIR
 
 class TrainPipeline:
