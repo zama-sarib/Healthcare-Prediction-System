@@ -12,7 +12,7 @@ from Healthcare.Constant.application import APP_HOST, APP_PORT
 from starlette.responses import RedirectResponse
 from uvicorn import run as app_run
 from fastapi.responses import Response
-# from Healthcare.ML.model.estimator import ModelResolver,TargetValueMapping
+from Healthcare.ML.model.estimator import ModelResolver,TargetValueMapping
 from Healthcare.Utils.main_utils import load_object
 from fastapi.middleware.cors import CORSMiddleware
 from Healthcare.Constant.training_pipeline import ARTIFACT_DIR,DATA_INGESTION_DIR_NAME,DATA_INGESTION_INGESTED_DIR,TARGET_COLUMN
@@ -65,12 +65,18 @@ async def predict_route():
         y_true = test_df[[TARGET_COLUMN]]
         test_df = test_df.drop([TARGET_COLUMN],axis=1)
 
+        base_path = os.path.join(os.getcwd(),'artifact')
+        latest_folder = max(os.listdir(os.path.join(os.getcwd(),'artifact')))
+        latest_model_path = os.path.join(base_path,latest_folder,'model_trainer','trained_model')
 
-        model_resolver = ModelResolver(model_dir=SAVED_MODEL_DIR)
+        logging.info(f"Latest Model Path: {latest_model_path}")
+
+        model_resolver = ModelResolver(model_dir=latest_model_path)
         if not model_resolver.is_model_exists():
             return Response("Model is not available")
         
-        best_model_path = model_resolver.get_best_model_path()
+        # best_model_path = model_resolver.get_best_model_path()
+        best_model_path = os.path.join(latest_model_path,"model.pkl")
         model = load_object(file_path=best_model_path)
         y_pred = model.predict(test_df)
         test_df['predicted_column'] = y_pred
@@ -98,6 +104,6 @@ def main():
 
 
 if __name__=="__main__":
-    main()
+    # main()
     # set_env_variable(env_file_path)
-    # app_run(app, host=APP_HOST, port=APP_PORT)
+    app_run(app, host=APP_HOST, port=APP_PORT)

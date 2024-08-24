@@ -74,6 +74,8 @@ def load_object(file_path: str, ) -> object:
             raise Exception(f"The file: {file_path} is not exists")
         with open(file_path, "rb") as file_obj:
             return dill.load(file_obj)
+      
+        return obj
     except Exception as e:
         raise HealthCareException(e, sys) from e
     

@@ -54,21 +54,32 @@ class ModelResolver:
         except Exception as e:
             raise e
 
-    def is_model_exists(self)->bool:
+    # def is_model_exists(self)->bool:
+    #     try:
+    #         if not os.path.exists(self.model_dir):
+    #             return False
+
+    #         timestamps = os.listdir(self.model_dir)
+    #         if len(timestamps)==0:
+    #             return False
+            
+    #         latest_model_path = self.get_best_model_path()
+
+    #         if not os.path.exists(latest_model_path):
+    #             return False
+
+    #         return True
+    #     except Exception as e:
+    #         raise e
+
+    def is_model_exists(self):
         try:
             if not os.path.exists(self.model_dir):
                 return False
 
-            timestamps = os.listdir(self.model_dir)
-            if len(timestamps)==0:
-                return False
-            
-            latest_model_path = self.get_best_model_path()
-
+            latest_model_path = os.path.join(self.model_dir,"model.pkl")
             if not os.path.exists(latest_model_path):
                 return False
-
             return True
         except Exception as e:
             raise e
-
