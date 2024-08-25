@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```
 Create a MongoDB database = Healthcare and collection = healthcare
 ```
-Note: Please take care of case of MongoDB database and collection name 
+Note: Please take care of cases in MongoDB database and collection name 
 
 
 ### Step 6-: Export the environment variable
