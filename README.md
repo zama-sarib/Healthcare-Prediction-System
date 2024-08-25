@@ -3,14 +3,14 @@ The Health Prediction system is an end user support and online consultation proj
 
 
 ## Run the Application
-Before we run the project, make sure that you are having MongoDB in your local system, with Compass since we are using MongoDB for data storage.
+Before we run the project, make sure that you are having MongoDB in your local system, with Compass since we are using MongoDB for data storage. Also make sure the csv file in the data folder in loaded in the remote MONGODB database.
 
 ### Step 1-: Clone the Repository
 ```
 git clone https://github.com/zama-sarib/Healthcare-Prediction-System.git
 ```
 
-### Step 2-: Creat conda environment
+### Step 2-: Create conda environment
 ```
 conda create -p ./env python=3.11 -y
 ```
